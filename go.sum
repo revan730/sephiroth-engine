@@ -1,0 +1,8 @@
+github.com/faiface/glhf v0.0.0-20170610131041-98c0391c0fd3/go.mod h1:zqnPFFIuYFFxl7uH2gYByJwIVKG7fRqlqQCbzAnHs9g=
+github.com/faiface/mainthread v0.0.0-20171120011319-8b78f0a41ae3/go.mod h1:VEPNJUlxl5KdWjDvz6Q1l+rJlxF2i6xqDeGuGAxa87M=
+github.com/faiface/pixel v0.5.1/go.mod h1:CEUU/s9E82Kqp01Boj1O67KnBskqiLghANqvUJGgDAM=
+github.com/go-gl/gl v0.0.0-20180407155706-68e253793080/go.mod h1:482civXOzJJCPzJ4ZOX/pwvXBWSnzD4OKMdH4ClKGbk=
+github.com/go-gl/glfw v0.0.0-20180426074136-46a8d530c326/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
+github.com/go-gl/mathgl v0.0.0-20180804195959-cdf14b6b8f8a/go.mod h1:dvrdneKbyWbK2skTda0nM4B9zSlS2GZSnjX7itr/skQ=
+github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+golang.org/x/image v0.0.0-20180708004352-c73c2afc3b81/go.mod h1:ux5Hcp/YLpHSI86hEcLt0YII63i6oz57MZXIpbrjZUs=

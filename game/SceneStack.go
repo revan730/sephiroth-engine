@@ -1,4 +1,4 @@
-package sephiroth
+package game
 
 type Node struct {
 	value GameScene

@@ -6,11 +6,13 @@ import (
 	"github.com/faiface/pixel/pixelgl"
 	sephiroth "github.com/revan730/sephiroth-engine"
 	"github.com/revan730/sephiroth-engine/game"
+	"github.com/revan730/sephiroth-engine/ui"
 )
 
 type TestScene struct {
 	textPrinted    bool
-	strFromPayload string
+	text text.Text
+	window *pixelgl.Window
 }
 
 func (t *TestScene) Update() {
@@ -21,12 +23,16 @@ func (t *TestScene) Update() {
 }
 
 func (t *TestScene) Draw() {
-	return
+	t.text.Draw(t.window)
 }
 
 func (t *TestScene) OnStart(payload interface{}) {
-	fmt.Println("Got " + payload.(string) + " from payload")
-	t.strFromPayload = payload.(string)
+	t.text := ui.NewText("", 0, pixel.V(100, 500))
+	fmt.Printf("Test", t.text)
+}
+
+func (t *TestScene) SetWindow(window *pixelgl.Window) {
+	t.window = window
 }
 
 func (t *TestScene) OnDestroy() {
