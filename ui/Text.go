@@ -7,6 +7,7 @@ import (
 
 	"github.com/faiface/pixel"
 	"github.com/faiface/pixel/text"
+	"github.com/golang/freetype/truetype"
 	"github.com/revan730/sephiroth-engine/resources"
 	"golang.org/x/image/font"
 	"golang.org/x/image/font/basicfont"
@@ -39,7 +40,7 @@ func loadTTF(fontName string, size float64) (font.Face, error) {
 	}), nil
 }
 
-func NewText(fontName string, size float64, orig pixel.Vec) {
+func NewText(fontName string, size float64, orig pixel.Vec) *text.Text {
 	if fontName == "" {
 		// Use default
 		return text.New(orig, DefaultAtlas)
