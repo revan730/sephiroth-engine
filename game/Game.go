@@ -22,6 +22,7 @@ func (g *Game) Run() {
 	if err != nil {
 		panic(err)
 	}
+	g.Config.StartScene.SetWindow(win)
 	g.Scenes.PushScene(g.Config.StartScene, g.Config.StartScenePayload)
 	for !win.Closed() {
 		// Event loop, drawing

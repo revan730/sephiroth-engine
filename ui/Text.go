@@ -40,13 +40,13 @@ func loadTTF(fontName string, size float64) (font.Face, error) {
 	}), nil
 }
 
-func NewText(fontName string, size float64, orig pixel.Vec) *text.Text {
-	if fontName == "" {
+func NewText(font string, size float64, orig pixel.Vec) *text.Text {
+	if font == "" {
 		// Use default
 		return text.New(orig, DefaultAtlas)
 	} else {
 		// Load TTF font from game resources
-		face, err := loadTTF(fontName, size)
+		face, err := loadTTF(font, size)
 		if err != nil {
 			panic(err)
 		}

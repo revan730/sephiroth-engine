@@ -3,16 +3,20 @@ package main
 import (
 	"fmt"
 
+	"github.com/faiface/pixel"
 	"github.com/faiface/pixel/pixelgl"
+	"github.com/faiface/pixel/text"
 	sephiroth "github.com/revan730/sephiroth-engine"
 	"github.com/revan730/sephiroth-engine/game"
 	"github.com/revan730/sephiroth-engine/ui"
+	"golang.org/x/image/colornames"
 )
 
 type TestScene struct {
-	textPrinted    bool
-	text text.Text
-	window *pixelgl.Window
+	textPrinted bool
+	text        *text.Text
+	label       *ui.Label
+	window      *pixelgl.Window
 }
 
 func (t *TestScene) Update() {
@@ -23,12 +27,18 @@ func (t *TestScene) Update() {
 }
 
 func (t *TestScene) Draw() {
-	t.text.Draw(t.window)
+	t.text.Draw(t.window, pixel.IM.Scaled(t.text.Orig, 2).Moved(t.window.Bounds().Center().Sub(t.text.Bounds().Center())))
+	t.label.Draw(t.window, pixel.IM.Scaled(t.text.Orig, 2).Moved(t.window.Bounds().Center().Sub(t.text.Bounds().Center())))
 }
 
 func (t *TestScene) OnStart(payload interface{}) {
-	t.text := ui.NewText("", 0, pixel.V(100, 500))
-	fmt.Printf("Test", t.text)
+	t.text = ui.NewText("", 0, pixel.V(0, 0))
+	t.label = ui.NewLabel("I'm a label", pixel.V(0, -50), 0, "")
+	fmt.Fprintln(t.text, "Hello World!")
+	t.text.Color = colornames.Green
+	fmt.Fprintln(t.text, "Multiple colors")
+	t.label.SetColor(colornames.Blueviolet)
+	t.label.SetText("I'am a label, you can change my text and color")
 }
 
 func (t *TestScene) SetWindow(window *pixelgl.Window) {
