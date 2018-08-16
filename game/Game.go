@@ -1,6 +1,8 @@
 package game
 
 import (
+	"time"
+
 	"github.com/faiface/pixel"
 	"github.com/faiface/pixel/pixelgl"
 )
@@ -24,10 +26,12 @@ func (g *Game) Run() {
 	}
 	g.Config.StartScene.SetWindow(win)
 	g.Scenes.PushScene(g.Config.StartScene, g.Config.StartScenePayload)
+	fps := time.Tick(time.Second / 120) // TODO: Make configurable
 	for !win.Closed() {
 		// Event loop, drawing
 		g.Scenes.Update()
 		g.Scenes.Draw()
 		win.Update()
+		<-fps
 	}
 }
