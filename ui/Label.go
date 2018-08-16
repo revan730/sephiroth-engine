@@ -35,3 +35,7 @@ func (l *Label) SetColor(color color.RGBA) {
 func (l *Label) Draw(win pixel.Target, im pixel.Matrix) {
 	l.text.Draw(win, im)
 }
+
+func (l *Label) Bounds() pixel.Rect {
+	return l.text.Bounds()
+}

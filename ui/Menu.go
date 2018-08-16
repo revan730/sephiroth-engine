@@ -38,7 +38,6 @@ func (m *Menu) Draw(win *pixelgl.Window, im pixel.Matrix) {
 	for _, l := range m.labels {
 		l.Draw(m.canvas, im)
 	}
-	//m.canvas.Clear(colornames.White)
 	m.canvas.Draw(win, im)
 }
 
