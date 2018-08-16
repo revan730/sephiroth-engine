@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"image/color"
 
-	"github.com/faiface/pixel/pixelgl"
-
 	"github.com/faiface/pixel"
 	"github.com/faiface/pixel/text"
 )
@@ -34,6 +32,6 @@ func (l *Label) SetColor(color color.RGBA) {
 	l.SetText(l.rawText)
 }
 
-func (l *Label) Draw(win *pixelgl.Window, im pixel.Matrix) {
+func (l *Label) Draw(win pixel.Target, im pixel.Matrix) {
 	l.text.Draw(win, im)
 }
