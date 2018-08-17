@@ -41,6 +41,6 @@ func (m *Menu) Draw(win *pixelgl.Window, im pixel.Matrix) {
 	m.canvas.Draw(win, im)
 }
 
-func (m *Menu) Center() pixel.Vec {
-	return m.canvas.Bounds().Center()
+func (m *Menu) Bounds() pixel.Rect {
+	return m.canvas.Bounds()
 }
